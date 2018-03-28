@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Boop The Snoot">
-    <title>Chocolate Lab</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/custom.css" />
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Boop The Snoot">
+  <title>Chocolate Lab</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="css/custom.css" />
 </head>
+
 <body>
-    <header class="masthead d-flex">
-        <div class="container text-center my-auto">
-            <h1 class="mb-0 mx-auto text-white masthead-stroke">Chocolate Lab.</h1>
-            <h3 class="text-white masthead-stroke">Boop The Snoot.</h3>
-        </div>
-    </header>
-    <script src="vendor/jquery.appear/jquery.appear.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-0 mx-auto text-white masthead-stroke">Chocolate Lab.</h1>
+      <h3 class="text-white masthead-stroke">Boop The Snoot.</h3>
+    </div>
+    <map name="snoot">
+      <area shape="circle" coords="900,175,100" href="#" alt="Boop! Were still under construction, but come back later!">
+    </map>
+    <img usemap="#snoot" src="img/loss.png" class="transparent"></img>
+  </header>
+  <script src="vendor/jquery.appear/jquery.appear.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery-rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+  <script>
+    $(document).ready(function(e) {
+      $('img[usemap]').rwdImageMaps();
+      $('area').on('click', function() {
+        alert($(this).attr('alt'));
+      });
+    });
+  </script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
+
 </html>
